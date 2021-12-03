@@ -6,6 +6,8 @@ AwesomeCoolProjectNumber1!
 ## Description
 This program will take photographs of animals in a non-envasive way via Raspberry Pi, Flask, and OPenCV. In addition, the program will display images taken to...
 
-## Testing
-"Jason here! :)"
-"Testing Branch"
+## Hardware
+- Raspberry Pi
+- PIR Sensor
+- Pi NoIR Camera
+- IR LEDs
