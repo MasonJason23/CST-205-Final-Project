@@ -10,13 +10,24 @@
 		</style>
 
 		<title>
-			CST 205 Final Project
+			CST-205 Project
 		</title>
 
 		<body>
 		<h1>
 			CST 205 Final Project
 		</h1>
+
+		<div>
+			<form method="POST" action="/">
+				{{ form.csrf_token }}
+				
+				{{ form.search.label }} 
+				{{ form.search(size=32) }}
+			
+				<input type="submit" value="Submit">
+			</form>
+		</div>
 
 		<div class = 'container'>
 			<p>

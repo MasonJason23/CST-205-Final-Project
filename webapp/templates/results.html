@@ -1,0 +1,44 @@
+{{ bootstrap.load_css() }}
+
+<DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1 {text-align: center;}
+            h3 {text-align: center;}
+			p {text-align: center;}
+			div {text-align: center;}
+		</style>
+
+		<title>
+			Results Page
+		</title>
+
+		<body>
+		<h1>
+			CST 205 Results
+		</h1>
+
+        <h3>
+            Searched for "{{ animal }}"
+		</h3>
+        
+        {% if list %}
+            {% for image in list %}
+                <div class = 'container'>
+                    <p>
+                        Credits: {{ image['user'] }}
+                    </p>
+                    <img src="{{ image['webformatURL'] }}" width="500" hieght="500" class="img-fluid rounded">
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>
+                No Results
+            </p>
+        {% endif %}
+        
+
+		</body>
+	</head>
+</html>
