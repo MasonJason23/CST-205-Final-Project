@@ -34,3 +34,11 @@ def home():
     im_info3 = images[2]
     return render_template('index.html', imInfo1 = im_info1, imInfo2 = im_info2, imInfo3 = im_info3)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/results/<tag>')
+def results(tag):
+    images = data['hits']
+    return render_template('results.html')
