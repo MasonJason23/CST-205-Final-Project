@@ -10,14 +10,58 @@
 		</style>
 
 		<title>
-			CST 205 Final Project
+			CST-205 Project
 		</title>
-
 
 		<body>
 		<h1>
 			CST 205 Final Project
 		</h1>
+
+		<div>
+			<form method="POST" action="/">
+				{{ form.csrf_token }}
+				
+				{{ form.search.label }} 
+				{{ form.search(size=32) }}
+			
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+
+		<div class = 'container'>
+			<p>
+				Credits: {{ imInfo1['user'] }}
+			</p>
+			<img src="{{ imInfo1['webformatURL'] }}" width="500" hieght="500" class="img-fluid rounded">
+		</div>
+
+		<br>
+
+		<div class = 'container'>
+			<p>
+				Credits: {{ imInfo2['user'] }}
+			</p>
+			<img src="{{ imInfo2['webformatURL'] }}" width="500" hieght="500" class="img-fluid rounded">
+		</div>
+
+		<br>
+
+		<div class = 'container'>
+			<p>
+				Credits: {{ imInfo3['user'] }}
+			</p>
+			<img src="{{ imInfo3['webformatURL'] }}" width="500" hieght="500" class="img-fluid rounded">
+		</div>
+
+		<br>
+
+		<a href="{{ url_for('about') }}">
+			<p>
+				About Page <br>
+			</p>
+		</a>
+
 		</body>
 	</head>
 </html>
