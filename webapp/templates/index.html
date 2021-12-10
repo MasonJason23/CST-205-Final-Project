@@ -5,6 +5,25 @@
 	<head>
 		<title>CST 205 Final Project</title>
 		<link href="style.css" rel="stylesheet" type="text/css"/>
+
+    <style type="stylesheet">
+
+      body {
+          color: black;
+      }
+      
+      h1, nav, h2 {
+          text-align: center;
+      }
+      
+      p {
+          text-align: center;
+      }
+      
+      div {
+          text-align: center;
+      }
+      </style>
 	</head>
 
 	<h1>
@@ -13,9 +32,14 @@
 	<br>
 
 	<nav>
-		<button>Home</button>
-		<button>About</button>
-		<input type="text">Search...<button>Search</button>
+		<button>
+      <a href="url_for('index')"> Home </a>
+    </button>
+		<button>
+      <a href="url_for('about')"> About </a>
+    </button>
+
+		<input type="text"> <button> Search </button>
 
 	</nav>
 	<br>
@@ -56,7 +80,9 @@
 	<br>
 	
 	<footer>
-		This is the footer.
+		  CST 205 Multimedia Design. 2021 Aguilar, Casareno, Johnson. <br>
+        <strong>Disclaimer:</strong> The information on this webpage is fictious. <br>
+        It is used for academic purposes only.
 	</footer>
 
 
