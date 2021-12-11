@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-casc_class = 'haarcascade_frontalface_default.xml'
+casc_class = 'haarcascade_frontalcatface.xml'
 face_cascade = cv2.CascadeClassifier(casc_class)
 img = cv2.imread('group.jpg')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
