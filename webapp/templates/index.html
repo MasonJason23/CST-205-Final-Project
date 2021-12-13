@@ -1,33 +1,8 @@
 {{ bootstrap.load_css() }}
 
-<DOCTYPE html>
-<html>
-	<head>
-		<link href="static/style.css" rel="stylesheet" type="text/css"/>
+{ % include 'head.html' % }
 
-		<title>
-			CST-205 Project
-		</title>
-	</head>
-
-		<nav>
-			<button>
-		<a href="{{ url_for('home') }}"> Home </a>
-		</button>
-			<button>
-		<a href="{{ url_for('about') }}"> About </a>
-		</button>
-
-			<form method="POST" action="/">
-				{{ form.csrf_token }}
-				
-				{{ form.search.label }} 
-				{{ form.search(size=32) }}
-			
-				<input type="submit" value="Submit">
-			</form>
-
-		</nav>
+	{ % include 'navBar.html' % }
 		<br>
 
 		<body>
@@ -65,13 +40,4 @@
 			</a>
 		</div>
 
-		</body>
-
-		<footer>
-			CST 205 Multimedia Design. 2021 Aguilar, Casareno, Johnson. <br>
-		  <strong>Disclaimer:</strong> The information on this webpage is fictious. <br>
-		  It is used for academic purposes only.
-		</footer>
-
-		
-</html>
+		{ % include 'footer.html' % }

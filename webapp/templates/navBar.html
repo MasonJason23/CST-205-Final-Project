@@ -1,0 +1,20 @@
+<nav>
+    <button>
+        <a href="{{ url_for('home') }}"> Home </a>
+    </button>
+
+    <button>
+        <a href="{{ url_for('about') }}"> About </a>
+    </button>
+
+    <form method="POST" action="/">
+        {{ form.csrf_token }}
+        {{ form.search.label }} 
+        {{ form.search(size=32) }}
+    
+        <input type="submit" value="Submit">
+    </form>
+
+</nav>
+
+<br>

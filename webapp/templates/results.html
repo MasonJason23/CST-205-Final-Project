@@ -1,37 +1,10 @@
 {{ bootstrap.load_css() }}
 
-<DOCTYPE html>
-<html>
-	<head>
-		<style>
-			h1 {text-align: center;}
-            h3 {text-align: center;}
-			p {text-align: center;}
-			div {text-align: center;}
-		</style>
+{ % include 'head.html' % }
 
-		<title>
-			Results Page
-		</title>
+    { % include 'navBar.html' % }
 
-    </head>
-
-        <nav>
-            <button>
-        <a href="{{ url_for('home') }}"> Home </a>
-        </button>
-            <button>
-        <a href="{{ url_for('about') }}"> About </a>
-        </button>
-
-        
-
-    </nav>
-
-		<body>
-		<h1>
-			CST 205 Results
-		</h1>
+	<body>
 
         <h3>
             Searched for "{{ animal }}"
@@ -53,13 +26,4 @@
         {% endif %}
         
 
-		</body>
-
-        <br>
-	
-	<footer>
-		CST 205 Multimedia Design. 2021 Aguilar, Casareno, Johnson. <br>
-        <strong>Disclaimer:</strong> The information on this webpage is fictious. <br>
-        It is used for academic purposes only.
-	</footer>
-</html>
+{ % include 'footer.html' % }
