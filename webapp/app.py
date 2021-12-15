@@ -48,12 +48,17 @@ def home():
     im_info3 = images[2]
     return render_template('index.html', form=form, imInfo1 = im_info1, imInfo2 = im_info2, imInfo3 = im_info3)
 
-@app.route('/about')
+@app.route('/about', methods=['GET', 'POST'])
 def about():
-    return render_template('about.html')
+    form = List()
+    if form.validate_on_submit():
+        return results(form.search.data)
+
+    return render_template('about.html', form=form)
 
 @app.route('/results')
 def results(search):
+    form = List()
     img_list = []
     images = data['hits']
     image_limit = 10
@@ -67,4 +72,4 @@ def results(search):
                 img_list.append(image)
                 image_limit -= 1
 
-    return render_template('results.html', animal=search, list=img_list)
+    return render_template('results.html', animal=search, list=img_list, form=form)
