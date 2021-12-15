@@ -1,3 +1,24 @@
+'''
+Title: Ace Animal Detector
+Course: CST 205
+Date: Dec. 15, 2021
+Authors: Jason Casareno, Chris Johnson, & Monica Aguilar
+Abstract: This program will take photographs of animals in a non-envasive way via Raspberry Pi,
+            Flask, and OPenCV. In addition, the project will display images taken via user's local website.
+            Displays an interactive search bar that allows user's of this project to search for specific
+            animals that the Raspberry Pi has taken or other existing images.
+
+GitHub Link: https://github.com/MasonJason23/CST-205-Final-Project
+
+Contributions:
+> Jason Casareno
+    - app.py and routes, GitHub & Trello setup, search bar in nav bar
+> Chris Johnson
+    - hardware/Raspberry Pi setup, use of OpenCV for animal identification
+> Monica Aguilar
+    - design elements, including the CSS file, HTML file layouts and partials, and elements (buttons and carousel)
+'''
+
 from flask import Flask, render_template, request, redirect
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
@@ -35,6 +56,9 @@ class List(FlaskForm):
         validators=[DataRequired()]
     )
 
+'''
+HOME page; selects 3 random images and displays them in the carousel
+'''
 @app.route('/', methods=['GET', 'POST'])
 def home():
     form = List()
@@ -48,12 +72,23 @@ def home():
     im_info3 = images[2]
     return render_template('index.html', form=form, imInfo1 = im_info1, imInfo2 = im_info2, imInfo3 = im_info3)
 
-@app.route('/about')
+'''
+ABOUT page; displays some README.md information, and provides a link to our GitHub
+'''
+@app.route('/about', methods=['GET', 'POST'])
 def about():
-    return render_template('about.html')
+    form = List()
+    if form.validate_on_submit():
+        return results(form.search.data)
 
+    return render_template('about.html', form=form)
+
+'''
+RESULTS page; displays results of search
+'''
 @app.route('/results')
 def results(search):
+    form = List()
     img_list = []
     images = data['hits']
     image_limit = 10
@@ -67,4 +102,4 @@ def results(search):
                 img_list.append(image)
                 image_limit -= 1
 
-    return render_template('results.html', animal=search, list=img_list)
+    return render_template('results.html', animal=search, list=img_list, form=form)
