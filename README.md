@@ -1,7 +1,8 @@
 # CSUMB FALL 2021 - CST 205 Final Project
 
 ## Note:
-This project is used for educational purposes
+- This project is used for educational purposes
+- An API (PixaBay) is used for showcasing purposes
 
 ## Title
 Ace Animal Detector
@@ -12,7 +13,8 @@ Ace Animal Detector
 - Monica Aguilar
 
 ## Refrences
-- https://www.w3schools.com/howto/howto_css_images_side_by_side.asp
+- https://flask.palletsprojects.com/en/2.0.x/
+- https://www.w3schools.com/howto/default.asp
 
 ## Class Information
 - California State University, Monterey Bay - CST 205
