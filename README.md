@@ -25,7 +25,12 @@ This program will take photographs of animals in a non-envasive way via Raspberr
 - IR LEDs
 
 ## How to Run the Program
-fill this in!
+1. Setup Raspberry Pi
+2. Plug in Pi NoIR camera to camera port
+3. Plug in PIR Sensor to vcc ground and gpio 4
+4. run trailcamera.py - python3 trailcamera.py
+5. run app.py
+6. Go to localhost:5000
 
 ## GitHub Link
 https://github.com/MasonJason23/CST-205-Final-Project
