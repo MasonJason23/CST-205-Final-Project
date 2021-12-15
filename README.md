@@ -1,5 +1,8 @@
 # CSUMB FALL 2021 - CST 205 Final Project
 
+## Note:
+This project is used for educational purposes
+
 ## Title
 Ace Animal Detector
 
