@@ -29,4 +29,5 @@ fill this in!
 
 ## GitHub Link
 https://github.com/MasonJason23/CST-205-Final-Project
+## Wired Together Trail Cam
 ![Image from iOS](https://user-images.githubusercontent.com/28279809/146267384-18ee6600-933e-46d9-96ea-27b9c661c4e1.jpg)
