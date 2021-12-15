@@ -120,6 +120,6 @@ def results(search):
         for i in range(len(faces)):
             if len(faces[i]) != 0:
                 return_imgs.append(images[i])
-        print(return_imgs)
+        # print(return_imgs)
 
     return render_template('results.html', animal=search, list=img_list, form=form)
