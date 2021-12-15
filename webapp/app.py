@@ -27,6 +27,9 @@ from wtforms.validators import DataRequired
 import random
 import requests, json
 from pprint import pprint
+import cv2
+import numpy as np
+import glob
 # from gpiozero import MotionSensor
 # from picamera import PiCamera
 # import datetime
@@ -101,5 +104,22 @@ def results(search):
             if (tag == search):
                 img_list.append(image)
                 image_limit -= 1
+        casc_class = 'haarcascade_frontalcatface.xml'
+
+        face_cascade = cv2.CascadeClassifier(casc_class)
+
+        if face_cascade.empty():
+            print('WARNING: Cascade did not load')
+
+        images = np.array(glob.glob('static/img/*.jpg'))
+
+        grays = np.array([cv2.cvtColor(cv2.imread(i), cv2.COLOR_BGR2GRAY) for i in images])
+        faces = np.array([face_cascade.detectMultiScale(i, 1.1, 9) for i in grays])
+
+        return_imgs = []
+        for i in range(len(faces)):
+            if len(faces[i]) != 0:
+                return_imgs.append(images[i])
+        print(return_imgs)
 
     return render_template('results.html', animal=search, list=img_list, form=form)
