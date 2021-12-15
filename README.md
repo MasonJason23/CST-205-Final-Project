@@ -8,6 +8,9 @@ Ace Animal Detector
 - Chris Johnson
 - Monica Aguilar
 
+## Refrences
+- https://www.w3schools.com/howto/howto_css_images_side_by_side.asp
+
 ## Class Information
 - California State University, Monterey Bay - CST 205
 - Dec. 15, 2021
