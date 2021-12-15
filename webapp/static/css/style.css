@@ -2,7 +2,7 @@ body {
 	color: black;
 }
 
-h1, nav, h2 {
+h1, nav, h2, h3 {
 	text-align: center;
 }
 
@@ -11,5 +11,9 @@ p {
 }
 
 div {
+	text-align: center;
+}
+
+footer {
 	text-align: center;
 }
