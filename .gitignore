@@ -1,15 +1,10 @@
 venv/
-
-*.pyc
 .DS_Store
 __pycache__/
-
 instance/
-
 .pytest_cache/
 .coverage
 htmlcov/
-
 dist/
 build/
 *.egg-info/
@@ -42,6 +37,7 @@ build/
 *.index
 *.meta
 *.pb*
+*.jpg
 autonomous-driving-software-platform-develop/
 archives/
 videos/

@@ -75,15 +75,20 @@ def home():
 '''
 ABOUT page; displays some README.md information, and provides a link to our GitHub
 '''
-@app.route('/about')
+@app.route('/about', methods=['GET', 'POST'])
 def about():
-    return render_template('about.html')
+    form = List()
+    if form.validate_on_submit():
+        return results(form.search.data)
+
+    return render_template('about.html', form=form)
 
 '''
 RESULTS page; displays results of search
 '''
 @app.route('/results')
 def results(search):
+    form = List()
     img_list = []
     images = data['hits']
     image_limit = 10
@@ -97,4 +102,4 @@ def results(search):
                 img_list.append(image)
                 image_limit -= 1
 
-    return render_template('results.html', animal=search, list=img_list)
+    return render_template('results.html', animal=search, list=img_list, form=form)
